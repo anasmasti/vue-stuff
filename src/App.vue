@@ -1,15 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Suspense>
+      <template #default>
+        <HelloWorld msg="Hello World" @sendName="getName" />
+      </template>
+      <template #fallback>Loading...</template>
+    </Suspense>
+  <h3>{{name}}</h3>
 </template>
 
 <script>
+import { ref, Suspense } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  setup() {
+    let name = ref('')
+
+    function getName(nameValue) {
+      console.log(nameValue);
+      name.value = nameValue
+    }
+
+    return {
+      name,
+      getName
+    }
   }
 }
 </script>

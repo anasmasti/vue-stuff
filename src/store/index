@@ -1,0 +1,26 @@
+import { createStore } from "vuex";
+
+const mainStore = createStore({
+  state() {
+    return {
+      skills: ["React", "JS"],
+    };
+  },
+  getters: {
+    getSkills(state) {
+      return state.skills;
+    },
+  },
+  mutations: {
+    addSkill: (state, payload) => {
+      state.skills.push(payload);
+    },
+  },
+  actions: {
+    addSkillAction (context, payload) {
+      context.commit('addSkill', payload)
+    }
+  }
+});
+
+export default mainStore;
