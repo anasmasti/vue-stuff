@@ -2,7 +2,6 @@ import { createStore } from "vuex";
 
 // Create Store
 const mainStore = createStore({
-
   // Put global state
   state() {
     return {
@@ -10,7 +9,7 @@ const mainStore = createStore({
     };
   },
 
-  // Set getters 
+  // Set getters
   getters: {
     getSkills(state) {
       return state.skills;
@@ -26,10 +25,10 @@ const mainStore = createStore({
 
   // Set actions
   actions: {
-    addSkillAction (context, payload) {
-      context.commit('addSkill', payload)
-    }
-  }
+    addSkillAction(context, payload) {
+      context.commit("addSkill", payload);
+    },
+  },
 });
 
 export default mainStore;
