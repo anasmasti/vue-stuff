@@ -19,8 +19,10 @@ export default {
     Suspense
   },
   setup() {
+    // Init name
     let name = ref('')
 
+    // GEt name from child components by custom event
     function getName(nameValue) {
       name.value = nameValue
     }
