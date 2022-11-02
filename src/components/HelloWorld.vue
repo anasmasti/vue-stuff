@@ -23,14 +23,25 @@ export default {
   name: "HelloWorld",
   props: ["msg"],
   async setup(_, context) {
+    // Init store
     let store = useStore();
+
+    // Init name
     let name = ref("Anas");
+
+    // Get skills from store by getter
     let addSkill = () => store.dispatch("addSkillAction", "Angular");
+
+    // Get skills from promise
     let skills = await getSkills()
 
+    // Get skills from store by getter
     // let skills = computed(() => store.getters.getSkills);
+
+    // Still watching the name value
     // watch(name, (val) => console.log("Name changes" + val));
 
+    // Pass the event to the parent component with name
     function sendName() {
       context.emit("sendName", name.value);
     }
