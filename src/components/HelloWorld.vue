@@ -4,7 +4,6 @@
     <input type="text" v-model="name">
     <button @click="sendName, addSkill()">send name</button>
 
-
     <template v-for="(skill, idx) in skills" :key="idx">
       <p v-text="skill"></p>
     </template>
@@ -12,7 +11,7 @@
 </template>
 
 <script >
-import { computed, ref, Suspense, watch } from 'vue';
+import { ref } from 'vue';
 import { useStore } from 'vuex'
 
 const getSkills = async () => {
@@ -27,30 +26,23 @@ export default {
     let store = useStore();
     let name = ref("Anas");
     let addSkill = () => store.dispatch("addSkillAction", "Angular");
-    let skills = ref([])
-    skills = await getSkills()
-
-
+    let skills = await getSkills()
 
     // let skills = computed(() => store.getters.getSkills);
-
-
-
+    // watch(name, (val) => console.log("Name changes" + val));
 
     function sendName() {
       context.emit("sendName", name.value);
     }
 
-    watch(name, (val) => console.log("Name changes" + val));
-
+    
     return {
       name,
       sendName,
       skills,
       addSkill
     };
-  },
-  components: { Suspense }
+  }
 }
 </script>
 

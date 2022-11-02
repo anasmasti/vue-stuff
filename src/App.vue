@@ -1,11 +1,11 @@
 <template>
-    <Suspense>
-      <template #default>
-        <HelloWorld msg="Hello World" @sendName="getName" />
-      </template>
-      <template #fallback>Loading...</template>
-    </Suspense>
-  <h3>{{name}}</h3>
+  <Suspense>
+    <template #default>
+      <HelloWorld msg="Vue stuff" @sendName="getName" />
+    </template>
+    <template #fallback>Loading...</template>
+  </Suspense>
+  <h3>{{ name }}</h3>
 </template>
 
 <script>
@@ -15,7 +15,8 @@ import HelloWorld from './components/HelloWorld.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    Suspense
   },
   setup() {
     let name = ref('')
