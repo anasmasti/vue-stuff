@@ -2,7 +2,7 @@
   <div class="hello">
     <h1 v-put-color:purple>{{ msg }}</h1>
     <input type="text" v-model="name">
-    <button @click="sendName, addSkill()">send name</button>
+    <button @click="sendName(); addSkill()">send name</button>
 
     <template v-for="(skill, idx) in skills" :key="idx">
       <p v-text="skill"></p>
