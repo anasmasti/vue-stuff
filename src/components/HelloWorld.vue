@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1 v-put-color:green>{{ msg }}</h1>
+    <h1 v-put-color:purple>{{ msg }}</h1>
     <input type="text" v-model="name">
     <button @click="sendName, addSkill()">send name</button>
 

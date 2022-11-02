@@ -22,7 +22,6 @@ export default {
     let name = ref('')
 
     function getName(nameValue) {
-      console.log(nameValue);
       name.value = nameValue
     }
 
