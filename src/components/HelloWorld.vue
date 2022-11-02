@@ -35,7 +35,6 @@ export default {
       context.emit("sendName", name.value);
     }
 
-    
     return {
       name,
       sendName,
