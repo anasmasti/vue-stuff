@@ -2,6 +2,7 @@
   <MainForm />
   <RouterLink to="/hello">Ho to hello</RouterLink>
   <RouterView />
+  <UserList />
   <!-- <Suspense>
     <template #default>
       <HelloWorld msg="Vue stuff" @sendName="getName" />
@@ -15,12 +16,14 @@
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 import MainForm from './components/MainForm.vue'
+import UserList from './components/UserList.vue';
 
 export default {
   name: 'App',
   components: {
     MainForm,
-    RouterLink
+    RouterLink,
+    UserList
 },
   setup() {
     // Init name
