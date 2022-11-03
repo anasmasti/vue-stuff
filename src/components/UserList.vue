@@ -37,7 +37,7 @@ export default {
 	margin: 8px;
 	padding: 16px;
 	text-align: center;
-	border-radius: 15px;
+	border-radius: 12px;
 	color: #ecd1ff !important;
 }
 
