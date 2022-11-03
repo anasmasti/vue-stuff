@@ -10,15 +10,18 @@
 import { onMounted, reactive } from 'vue'
 import fetchUsers from '../services/users/fetchUsers'
 import refactorData from '../services/utils/refactorData'
+
 export default {
 	setup() {
 		let users = reactive([])
 		// let data = [{ id: 1, name: 'Anas' }, { id: 2, name: 'Mohammed' }, { id: 1, name: 'Kamal' }]
 
+		// Get users and refactor data
 		function getUsers() {
 			fetchUsers().then((data) => users.push(...refactorData(data)))
 		}
 
+		// Get users data at component mounting
 		onMounted(() => {
 			getUsers()
 		})

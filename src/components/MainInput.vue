@@ -1,6 +1,7 @@
 <template>
     <input type="text" v-model="inputValue" @change="getInputValue">
 </template>
+
 <script>
 import { ref, watch } from 'vue';
 
@@ -10,12 +11,14 @@ export default {
     setup(props, context) {
         let inputValue = ref("")
 
+        // Observe props to empty inputs after sending data
         watch((props.isSended, () => {
             if (props.isSended) {
                 inputValue.value = ""
             }
         }))
 
+        // Send event to the parent
         function getInputValue() {
             context.emit("getInputValue", inputValue.value)
         }
