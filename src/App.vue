@@ -1,22 +1,22 @@
 <template>
-  <Suspense>
+  <MainForm />
+  <!-- <Suspense>
     <template #default>
       <HelloWorld msg="Vue stuff" @sendName="getName" />
     </template>
     <template #fallback>Loading...</template>
   </Suspense>
-  <h3>{{ name }}</h3>
+  <h3>{{ name }}</h3> -->
 </template>
 
 <script>
-import { ref, Suspense } from 'vue';
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue';
+import MainForm from './components/MainForm.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    Suspense
+    MainForm
   },
   setup() {
     // Init name
