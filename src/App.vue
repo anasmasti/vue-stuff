@@ -3,8 +3,7 @@
   <div id="info-card" v-if="Object.keys(formData).length != 0">
     <p v-for="item in Object.keys(formData)" :key="item.name">
       <span>{{ capitalizeText(item) }} : </span>
-      <span>
-        <strong v-text="formData[item] ? capitalizeText(formData[item]) : '--'"></strong>
+      <span id="value" v-text="formData[item] ? capitalizeText(formData[item]) : '--'">
       </span>
     </p>
   </div>
@@ -21,7 +20,7 @@
 </template>
 
 <script>
-import { ref, reactive, computed } from 'vue';
+import { ref, reactive } from 'vue';
 import capitalizeText from './services/utils/capitalizeText'
 import { RouterLink } from 'vue-router';
 import MainForm from './components/MainForm.vue'
@@ -79,5 +78,9 @@ export default {
   margin-top: 15px;
   margin-left: 6px;
   margin-right: 6px;
+}
+
+#value {
+  font-weight: 900;
 }
 </style>
