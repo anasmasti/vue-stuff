@@ -33,12 +33,12 @@ input {
     border-radius: 12px;
     padding: 10px;
     border: none;
-    background: #ecd1ff;
-    border: 1px solid #cc84ff;
+    background: #efd8ff;
+    border: 1px solid #d69cff;
 }
 
 input::placeholder {
-    color: #cc84ff;
-    font-weight: bold;
+    color: #d190ff;
+    font-weight: 700;
 }
 </style>

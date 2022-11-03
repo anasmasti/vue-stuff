@@ -11,11 +11,11 @@ export default {
 
 <style scoped>
 button {
-	background: rgb(31, 31, 31);
-	color: #cc84ff;
+	background: rgb(36, 36, 36);
+	color: #ecd1ff;
 	padding: 14px;
 	border-radius: 20px;
-	font-weight: bold;
+	font-weight: 900;
 	cursor: pointer;
 	font-size: 15px;
 }

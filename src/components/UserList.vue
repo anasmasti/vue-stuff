@@ -33,7 +33,7 @@ export default {
 
 <style scoped>
 #card {
-	background: rgb(43, 43, 43);
+	background: rgb(36, 36, 36);
 	margin: 8px;
 	padding: 16px;
 	text-align: center;
@@ -41,8 +41,12 @@ export default {
 	color: #ecd1ff !important;
 }
 
+#card > h4 {
+	font-weight: 900;
+}
+
 h1 {
-	font-weight: bold;
+	font-weight: 900;
 	font-size: 40px;
 }
 </style>

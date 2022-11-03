@@ -63,17 +63,16 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 
 #info-card {
-  background: rgb(243, 242, 242);
+  background: rgb(249, 249, 249);
   padding: 6px;
   border-radius: 12px;
   margin-top: 15px;

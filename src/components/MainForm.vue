@@ -1,5 +1,5 @@
 <template>
-	<form action="" @submit.prevent="sendData()">
+	<form @submit.prevent="sendData()">
 		<MainInput v-for="input in inputs" :key="input.id" :placeholder="input.placeholder"
 			@getInputValue="input.valueHandler" :isSended="isSended" />
 		<MainButton title="Send" />
@@ -81,6 +81,8 @@ form {
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
-	padding: 4px;
+	padding: 18px;
+	background: #f6e9ff;
+	border-radius: 12px;
 }
 </style>
