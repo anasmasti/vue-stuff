@@ -9,21 +9,22 @@
 
 <script>
 import { ref } from 'vue'
-import MainButton from './MainButton.vue'
-import MainInput from './MainInput.vue'
+import MainButton from './MainButton.vue';
+import MainInput from './MainInput.vue';
 
 export default {
 	name: 'MainForm',
-
 	components: {
 		MainButton,
 		MainInput
 	},
 	setup() {
+		// Init inputs refs
 		let inputNameValue = ref("")
 		let inputAgeValue = ref("")
 		let inputCountryValue = ref("")
-
+		
+		// Hundel input events to get values
 		function hundleNameInputValue(value) {
 			inputNameValue.value = value
 		}
@@ -34,10 +35,12 @@ export default {
 			inputCountryValue.value = value
 		}
 
+		// Send data on submit
 		function sendData() {
 			console.log(inputNameValue.value, inputAgeValue.value, inputCountryValue.value);
 		}
 
+		// Init inputs 
 		let inputs = ref([
 			{
 				id: 1,

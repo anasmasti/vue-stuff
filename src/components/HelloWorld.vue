@@ -14,15 +14,15 @@
 import { ref } from 'vue';
 import { useStore } from 'vuex'
 
-const getSkills = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 3000))
+const getSkills = () => {
+
   return ['data1', 'data2']
 }
 
 export default {
   name: "HelloWorld",
   props: ["msg"],
-  async setup(_, context) {
+  setup(_, context) {
     // Init store
     let store = useStore();
 
@@ -33,7 +33,7 @@ export default {
     let addSkill = () => store.dispatch("addSkillAction", "Angular");
 
     // Get skills from promise
-    let skills = await getSkills()
+    let skills = getSkills()
 
     // Get skills from store by getter
     // let skills = computed(() => store.getters.getSkills);

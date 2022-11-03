@@ -3,13 +3,8 @@
 </template>
 
 <script>
-
-
 export default {
 	name: 'MainButton',
-	props: ['title'],
-	setup() {
-
-	}
+	props: ['title']
 }
 </script>

@@ -1,7 +1,6 @@
 <template>
     <input type="text" v-model="inputValue" @change="getInputValue">
 </template>
-
 <script>
 import { ref } from 'vue';
 
