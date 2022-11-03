@@ -1,9 +1,9 @@
 <template>
-	<h1>User Lsit</h1>
-	<template v-for="user in users" :key="user.id">
+	<h1>User List</h1>
+	<div v-for="user in users" :key="user.id" id="card">
 		<h4><strong v-text="user.name"></strong></h4>
-		<p v-text="user.email"></p>
-	</template>
+		<p><small v-text="user.email"></small></p>
+	</div>
 </template>
 
 <script>
@@ -31,6 +31,18 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+#card {
+	background: rgb(43, 43, 43);
+	margin: 8px;
+	padding: 16px;
+	text-align: center;
+	border-radius: 15px;
+	color: #ecd1ff !important;
+}
 
+h1 {
+	font-weight: bold;
+	font-size: 40px;
+}
 </style>

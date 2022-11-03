@@ -18,12 +18,12 @@ export default {
 		MainButton,
 		MainInput
 	},
-	setup() {
+	setup(_, context) {
 		// Init inputs refs
 		let inputNameValue = ref("")
 		let inputAgeValue = ref("")
 		let inputCountryValue = ref("")
-		
+
 		// Hundel input events to get values
 		function hundleNameInputValue(value) {
 			inputNameValue.value = value
@@ -37,7 +37,7 @@ export default {
 
 		// Send data on submit
 		function sendData() {
-			console.log(inputNameValue.value, inputAgeValue.value, inputCountryValue.value);
+			context.emit('sendData', { name: inputNameValue.value, age: inputAgeValue.value, country: inputCountryValue.value })
 		}
 
 		// Init inputs 
@@ -69,3 +69,12 @@ export default {
 	}
 }
 </script>
+
+<style scoped>
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 4px;
+}
+</style>
