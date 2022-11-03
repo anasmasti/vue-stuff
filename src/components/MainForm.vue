@@ -1,8 +1,8 @@
 <template>
 	<form action="" @submit.prevent="sendData()">
-		<MainInput placeholder="Name" @getInputValue="hundleNameInputValue" />
-		<MainInput placeholder="Age" @getInputValue="hundleAgeInputValue" />
-		<MainInput placeholder="County" @getInputValue="hundleCountryInputValue" />
+		<MainInput v-for="input in inputs" :key="input.id" :placeholder="input.placeholder"
+			@getInputValue="input.valueHandler" />
+
 		<MainButton title="Send" />
 	</form>
 </template>
@@ -38,11 +38,30 @@ export default {
 			console.log(inputNameValue.value, inputAgeValue.value, inputCountryValue.value);
 		}
 
+		let inputs = ref([
+			{
+				id: 1,
+				placeholder: 'Name',
+				valueHandler: hundleNameInputValue
+			},
+			{
+				id: 2,
+				placeholder: 'Age',
+				valueHandler: hundleAgeInputValue
+			},
+			{
+				id: 3,
+				placeholder: 'Country',
+				valueHandler: hundleCountryInputValue
+			}
+		])
+
 		return {
 			hundleNameInputValue,
 			hundleAgeInputValue,
 			hundleCountryInputValue,
-			sendData
+			sendData,
+			inputs
 		}
 	}
 }
