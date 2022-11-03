@@ -9,13 +9,14 @@
 <script>
 import { onMounted, reactive } from 'vue'
 import fetchUsers from '../services/users/fetchUsers'
+import refactorData from '../services/utils/refactorData'
 export default {
 	setup() {
 		let users = reactive([])
 		// let data = [{ id: 1, name: 'Anas' }, { id: 2, name: 'Mohammed' }, { id: 1, name: 'Kamal' }]
 
 		function getUsers() {
-			fetchUsers().then((data) => users.push(...data))
+			fetchUsers().then((data) => users.push(...refactorData(data)))
 		}
 
 		onMounted(() => {
