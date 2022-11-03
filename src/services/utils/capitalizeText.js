@@ -1,10 +1,16 @@
-import { computed } from "vue";
-
-const capitalizeText = (text) =>
-  computed(() => {
-    if (text != "") {
-      return text.at(0).toUpperCase() + text.slice(1);
+export default function capitalizeText(text) {
+  if (text != "") {
+    let capitalizedText;
+    switch (typeof text) {
+      case "string":
+        capitalizedText = text.at(0).toUpperCase() + text.slice(1);
+        break;
+      case "number":
+        capitalizedText = text;
+      default:
+        capitalizedText = text;
+        break;
     }
-  });
-
-export default capitalizeText;
+    return capitalizedText;
+  }
+}

@@ -2,7 +2,7 @@
   <MainForm @sendData="handleFormData" />
   <div id="info-card" v-if="Object.keys(formData).length != 0">
     <p v-for="item in Object.keys(formData)" :key="item.name">
-      <span>{{ item }} : </span>
+      <span>{{ capitalizeText(item) }} : </span>
       <span>
         <strong v-text="formData[item] ? capitalizeText(formData[item]) : '--'"></strong>
       </span>
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { ref, reactive } from 'vue';
+import { ref, reactive, computed } from 'vue';
 import capitalizeText from './services/utils/capitalizeText'
 import { RouterLink } from 'vue-router';
 import MainForm from './components/MainForm.vue'
@@ -34,6 +34,7 @@ export default {
     RouterLink,
     UserList
   },
+
   setup() {
     // Init name
     let name = ref('')
