@@ -2,12 +2,19 @@
     <input type="text" v-model="inputValue" @change="getInputValue">
 </template>
 <script>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 export default {
     name: 'MainInput',
-    setup(_, context) {
+    props: ['isSended'],
+    setup(props, context) {
         let inputValue = ref("")
+
+        watch((props.isSended, () => {
+            if (props.isSended) {
+                inputValue.value = ""
+            }
+        }))
 
         function getInputValue() {
             context.emit("getInputValue", inputValue.value)
@@ -29,6 +36,7 @@ input {
     background: #ecd1ff;
     border: 1px solid #cc84ff;
 }
+
 input::placeholder {
     color: #cc84ff;
     font-weight: bold;

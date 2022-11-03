@@ -1,8 +1,8 @@
 <template>
 	<form action="" @submit.prevent="sendData()">
 		<MainInput v-for="input in inputs" :key="input.id" :placeholder="input.placeholder"
-			@getInputValue="input.valueHandler" />
-
+			@getInputValue="input.valueHandler" :isSended="isSended" />
+{{isSended}}
 		<MainButton title="Send" />
 	</form>
 </template>
@@ -23,6 +23,7 @@ export default {
 		let inputNameValue = ref("")
 		let inputAgeValue = ref("")
 		let inputCountryValue = ref("")
+		let isSended = ref(false)
 
 		// Hundel input events to get values
 		function hundleNameInputValue(value) {
@@ -38,6 +39,7 @@ export default {
 		// Send data on submit
 		function sendData() {
 			context.emit('sendData', { name: inputNameValue.value, age: inputAgeValue.value, country: inputCountryValue.value })
+			isSended.value = true
 		}
 
 		// Init inputs 
@@ -64,7 +66,8 @@ export default {
 			hundleAgeInputValue,
 			hundleCountryInputValue,
 			sendData,
-			inputs
+			inputs,
+			isSended
 		}
 	}
 }
