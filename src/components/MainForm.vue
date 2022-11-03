@@ -2,7 +2,6 @@
 	<form action="" @submit.prevent="sendData()">
 		<MainInput v-for="input in inputs" :key="input.id" :placeholder="input.placeholder"
 			@getInputValue="input.valueHandler" :isSended="isSended" />
-{{isSended}}
 		<MainButton title="Send" />
 	</form>
 </template>
@@ -40,6 +39,10 @@ export default {
 		function sendData() {
 			context.emit('sendData', { name: inputNameValue.value, age: inputAgeValue.value, country: inputCountryValue.value })
 			isSended.value = true
+
+			setTimeout(() => {
+				isSended.value = false
+			}, 100);
 		}
 
 		// Init inputs 
