@@ -1,5 +1,5 @@
 <template>
-	<button type="submit">{{title}}</button>
+	<button type="submit">{{ title }}</button>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
 	name: 'MainButton',
 	props: ['title'],
 	setup() {
-		
+
 	}
 }
 </script>
