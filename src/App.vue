@@ -15,8 +15,8 @@
       <HelloWorld msg="Vue stuff" @sendName="getName" />
     </template>
     <template #fallback>Loading...</template>
-  </Suspense>
-  <h3>{{ name }}</h3> -->
+  </Suspense> -->
+  <!--  <h3>{{ name }}</h3> -->
 </template>
 
 <script>
