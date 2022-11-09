@@ -2,6 +2,7 @@
 	<form @submit.prevent="sendData()">
 		<MainInput v-for="input in inputs" :key="input.id" :placeholder="input.placeholder"
 			@getInputValue="input.valueHandler" :isSended="isSended" />
+			
 		<MainButton title="Send" />
 	</form>
 </template>
