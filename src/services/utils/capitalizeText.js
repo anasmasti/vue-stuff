@@ -7,6 +7,7 @@ export default function capitalizeText(text) {
         break;
       case "number":
         capitalizedText = text;
+        break;
       default:
         capitalizedText = text;
         break;

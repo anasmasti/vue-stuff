@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { ref, watch } from 'vue';
+import { ref, watchEffect } from 'vue';
 
 export default {
     name: 'MainInput',
@@ -12,7 +12,7 @@ export default {
         let inputValue = ref("")
 
         // Observe props to empty inputs after sending data
-        watch((props.isSended, () => {
+        watchEffect((props.isSended, () => {
             if (props.isSended) {
                 inputValue.value = ""
             }

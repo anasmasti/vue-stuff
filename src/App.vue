@@ -7,7 +7,7 @@
       </span>
     </p>
   </div>
-  <!-- <RouterLink to="/hello">Ho to hello</RouterLink> -->
+  <RouterLink to="/hello">Ho to hello</RouterLink>
   <RouterView />
   <UserList />
   <!-- <Suspense>

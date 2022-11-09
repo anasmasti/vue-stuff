@@ -17,6 +17,7 @@ export default {
 		MainButton,
 		MainInput
 	},
+	
 	setup(_, context) {
 		// Init inputs refs
 		let inputNameValue = ref("")

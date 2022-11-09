@@ -28,7 +28,7 @@ export default {
 
     // Init name
     let name = ref("Anas");
-
+   
     // Get skills from store by getter
     let addSkill = () => store.dispatch("addSkillAction", "Angular");
 
