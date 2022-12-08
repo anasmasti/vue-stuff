@@ -108,8 +108,8 @@ export default {
   padding: 6px;
   border-radius: 12px;
   margin-top: 15px;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-inline: 6px;
+  margin-top: 20px;
 }
 
 #value {
@@ -124,7 +124,6 @@ export default {
   text-decoration: none;
   color: gray;
   border-radius: 20px;
-  margin-block: 500px !important;
 }
 
 #go-btn:hover {
