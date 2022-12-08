@@ -4,7 +4,7 @@ import NotFound from "./components/NotFound.vue";
 
 // Init routes
 const routes = [
-  { path: "/hello", component: HelloWorld, name: "hello" },
+  { path: "/hello", component: HelloWorld },
   {
     path: "/404",
     component: NotFound,
