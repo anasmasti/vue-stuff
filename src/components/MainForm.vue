@@ -2,7 +2,7 @@
 	<form @submit.prevent="sendData()">
 		<MainInput v-for="input in inputs" :key="input.id" :placeholder="input.placeholder"
 			@getInputValue="input.valueHandler" :isSended="isSended" />
-			
+
 		<MainButton title="Send" />
 	</form>
 </template>
@@ -18,7 +18,7 @@ export default {
 		MainButton,
 		MainInput
 	},
-	
+
 	setup(_, context) {
 		// Init inputs refs
 		let inputNameValue = ref("")
@@ -86,5 +86,6 @@ form {
 	padding: 18px;
 	background: #f6e9ff;
 	border-radius: 12px;
+	margin-top: 20px;
 }
 </style>

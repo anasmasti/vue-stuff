@@ -14,7 +14,6 @@ import refactorData from '../services/utils/refactorData'
 export default {
 	setup() {
 		let users = reactive([])
-		// let data = [{ id: 1, name: 'Anas' }, { id: 2, name: 'Mohammed' }, { id: 1, name: 'Kamal' }]
 
 		// Get users and refactor data
 		function getUsers() {
@@ -44,7 +43,7 @@ export default {
 	color: #ecd1ff !important;
 }
 
-#card > h4 {
+#card>h4 {
 	font-weight: 900;
 }
 

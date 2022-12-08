@@ -109,7 +109,6 @@ export default {
   border-radius: 12px;
   margin-top: 15px;
   margin-inline: 6px;
-  margin-top: 20px;
 }
 
 #value {
