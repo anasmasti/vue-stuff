@@ -10,6 +10,10 @@
   <RouterLink to="/hello">Ho to hello</RouterLink>
   <RouterView />
   <UserList />
+
+  <!-- <div id="container"></div> -->
+  <!-- <h1 id="headerOne"></h1>
+  <p id="para"></p> -->
   <!-- <Suspense>
     <template #default>
       <HelloWorld msg="Vue stuff" @sendName="getName" />
@@ -20,7 +24,7 @@
 </template>
 
 <script>
-import { ref, reactive } from 'vue';
+import { ref, reactive, onMounted } from 'vue';
 import capitalizeText from './services/utils/capitalizeText'
 import { RouterLink } from 'vue-router';
 import MainForm from './components/MainForm.vue'
@@ -40,6 +44,38 @@ export default {
 
     // Init form data
     let formData = reactive({})
+
+    onMounted(() => {
+      let bodyTarget = document.body
+      let containerTarget = document.createElement('div')
+      let h1Target = document.createElement('h1')
+      let pTarget = document.createElement('p')
+      let buttonTarget = document.createElement('button')
+
+      let paraText = document.createTextNode('This is paragraph')
+      let h1Text = document.createTextNode('This is header')
+      let buttonText = document.createTextNode('Click')
+
+      let attr = document.createAttribute('data')
+
+      h1Target.appendChild(h1Text)
+
+      pTarget.appendChild(paraText)
+      pTarget.setAttributeNode(attr)
+
+      buttonTarget.appendChild(buttonText)
+
+      containerTarget.appendChild(h1Target)
+      containerTarget.appendChild(pTarget)
+      containerTarget.appendChild(buttonTarget)
+
+      bodyTarget.appendChild(containerTarget)
+
+      buttonTarget.addEventListener('click', () => {
+        let pCLone = pTarget.cloneNode(true)
+        containerTarget.appendChild(pCLone)
+      })
+    })
 
     // GEt name from child components by custom event
     function getName(nameValue) {
