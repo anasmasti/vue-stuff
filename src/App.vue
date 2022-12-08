@@ -1,4 +1,6 @@
 <template>
+  <RouterLink to="/hello" id="go-btn">Say hello</RouterLink>
+  <RouterView />
   <MainForm @sendData="handleFormData" />
   <div id="info-card" v-if="Object.keys(formData).length != 0">
     <p v-for="item in Object.keys(formData)" :key="item.name">
@@ -7,8 +9,6 @@
       </span>
     </p>
   </div>
-  <RouterLink to="/hello">Go to hello</RouterLink>
-  <RouterView />
   <UserList />
   <!-- <Suspense>
     <template #default>
@@ -114,5 +114,21 @@ export default {
 
 #value {
   font-weight: 900;
+}
+
+#go-btn {
+  background: rgb(241, 241, 241);
+  font-weight: bold;
+  padding-inline: 13px;
+  padding-block: 5px;
+  text-decoration: none;
+  color: gray;
+  border-radius: 20px;
+  margin-block: 500px !important;
+}
+
+#go-btn:hover {
+  background: rgb(230, 230, 230);
+  transition-duration: .3s;
 }
 </style>
