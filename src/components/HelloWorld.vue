@@ -1,5 +1,3 @@
 <template>
-  <h1 v-put-color:purple>Hello World!</h1>
+  <h1 v-put-color:blueviolet>Hello World!</h1>
 </template>
-
-
